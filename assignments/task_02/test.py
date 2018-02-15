@@ -6,6 +6,7 @@ import os
 class CheckTask(unittest.TestCase):
 
     def test_correct_totals(self):
+        """ Test total() on randomly generated sample files """
         root, dirs, files = next(os.walk("test_cases"))
         totals = [task_02.total(os.path.join(root, file)) for file in files]
         self.assertEqual(totals, [224273, 5462, 509244])
